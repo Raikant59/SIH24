@@ -1,5 +1,8 @@
 package com.sihapp
+<<<<<<< HEAD
 import expo.modules.ReactActivityDelegateWrapper
+=======
+>>>>>>> origin/main
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
@@ -13,15 +16,22 @@ class MainActivity : ReactActivity() {
    * rendering of the component.
    */
   override fun getMainComponentName(): String = "SIHAPP"
+<<<<<<< HEAD
   @Override
   protected String getMainComponentName() {
     return "main";
   }
+=======
+>>>>>>> origin/main
 
   /**
    * Returns the instance of the [ReactActivityDelegate]. We use [DefaultReactActivityDelegate]
    * which allows you to enable New Architecture with a single boolean flags [fabricEnabled]
    */
   override fun createReactActivityDelegate(): ReactActivityDelegate =
+<<<<<<< HEAD
       ReactActivityDelegateWrapper(this, BuildConfig.IS_NEW_ARCHITECTURE_ENABLED, DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled))
+=======
+      DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+>>>>>>> origin/main
 }
