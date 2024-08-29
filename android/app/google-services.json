@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "670441457779",
+    "project_id": "sih24-9b0a9",
+    "storage_bucket": "sih24-9b0a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670441457779:android:45e9fd680c2eb0ce338206",
+        "android_client_info": {
+          "package_name": "com.sihapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGY3JN2hq6nAs5CZPvYbRqBnR1t9Uchvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
