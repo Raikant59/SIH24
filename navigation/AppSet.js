@@ -5,6 +5,7 @@ const AppSet = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Settings</Text>
+            <Text style={styles.text}>App Settings</Text>
         </View>
     );
 }
