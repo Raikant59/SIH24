@@ -7,11 +7,10 @@ const Home = ({ navigation }) => {
 
     const handleSearch = (text) => {
         setSearchQuery(text);
-        // Add your search logic here
     };
 
     const handleButtonPress = (field) => {
-        // Implement functionality for other buttons if needed
+        
     };
 
     const alphabetPressed = (field) => {
@@ -27,7 +26,7 @@ const Home = ({ navigation }) => {
                 onChangeText={handleSearch}
             />
 
-            <Text style={styles.text}>Hi, ABC</Text>
+            <Text style={styles.text}>Indian Sign Language</Text>
 
             <View style={styles.learningContainer}>
                 <TouchableOpacity 
@@ -52,7 +51,7 @@ const Home = ({ navigation }) => {
                         style={styles.imageBackground} 
                         imageStyle={styles.imageStyle}
                     >
-                        <Text style={styles.buttonText}>Words & Sentence</Text>
+                        <Text style={styles.buttonText }>Words & Sentence</Text>
                     </ImageBackground>
                 </TouchableOpacity>
                 

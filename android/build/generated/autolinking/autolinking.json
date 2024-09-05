@@ -1,117 +1,69 @@
 {
-  "root": "E:\\SIH24\\SIHAPP",
-  "reactNativePath": "E:\\SIH24\\SIHAPP\\node_modules\\react-native",
+  "root": "C:\\Users\\admin\\sih\\SIH24",
+  "reactNativePath": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native",
   "reactNativeVersion": "0.75",
   "dependencies": {
-    "react-native-pager-view": {
-      "root": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-pager-view",
-      "name": "react-native-pager-view",
-      "platforms": {
-        "ios": {
-          "podspecPath": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-pager-view\\react-native-pager-view.podspec",
-          "version": "6.4.0",
-          "configurations": [],
-          "scriptPhases": []
-        },
-        "android": {
-          "sourceDir": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-pager-view\\android",
-          "packageImportPath": "import com.reactnativepagerview.PagerViewPackage;",
-          "packageInstance": "new PagerViewPackage()",
-          "buildTypes": [],
-          "libraryName": "pagerview",
-          "componentDescriptors": [
-            "LEGACY_RNCViewPagerComponentDescriptor",
-            "RNCViewPagerComponentDescriptor"
-          ],
-          "cmakeListsPath": "E:/SIH24/SIHAPP/node_modules/react-native-pager-view/android/build/generated/source/codegen/jni/CMakeLists.txt",
-          "cxxModuleCMakeListsModuleName": null,
-          "cxxModuleCMakeListsPath": null,
-          "cxxModuleHeaderName": null,
-          "isPureCxxDependency": false
-        }
-      }
-    },
-    "react-native-safe-area-context": {
-      "root": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-safe-area-context",
-      "name": "react-native-safe-area-context",
-      "platforms": {
-        "ios": {
-          "podspecPath": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-safe-area-context\\react-native-safe-area-context.podspec",
-          "version": "4.10.9",
-          "configurations": [],
-          "scriptPhases": []
-        },
-        "android": {
-          "sourceDir": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-safe-area-context\\android",
-          "packageImportPath": "import com.th3rdwave.safeareacontext.SafeAreaContextPackage;",
-          "packageInstance": "new SafeAreaContextPackage()",
-          "buildTypes": [],
-          "libraryName": "safeareacontext",
-          "componentDescriptors": [
-            "RNCSafeAreaProviderComponentDescriptor",
-            "RNCSafeAreaViewComponentDescriptor"
-          ],
-          "cmakeListsPath": "E:/SIH24/SIHAPP/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt",
-          "cxxModuleCMakeListsModuleName": null,
-          "cxxModuleCMakeListsPath": null,
-          "cxxModuleHeaderName": null,
-          "isPureCxxDependency": false
-        }
-      }
-    },
-    "react-native-screens": {
-      "root": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-screens",
-      "name": "react-native-screens",
-      "platforms": {
-        "ios": {
-          "podspecPath": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-screens\\RNScreens.podspec",
-          "version": "3.34.0",
-          "configurations": [],
-          "scriptPhases": []
-        },
-        "android": {
-          "sourceDir": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-screens\\android",
-          "packageImportPath": "import com.swmansion.rnscreens.RNScreensPackage;",
-          "packageInstance": "new RNScreensPackage()",
-          "buildTypes": [],
-          "libraryName": "rnscreens",
-          "componentDescriptors": [
-            "RNSFullWindowOverlayComponentDescriptor",
-            "RNSScreenContainerComponentDescriptor",
-            "RNSScreenNavigationContainerComponentDescriptor",
-            "RNSScreenStackHeaderConfigComponentDescriptor",
-            "RNSScreenStackHeaderSubviewComponentDescriptor",
-            "RNSScreenStackComponentDescriptor",
-            "RNSSearchBarComponentDescriptor",
-            "RNSScreenComponentDescriptor",
-            "RNSModalScreenComponentDescriptor"
-          ],
-          "cmakeListsPath": "E:/SIH24/SIHAPP/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt",
-          "cxxModuleCMakeListsModuleName": null,
-          "cxxModuleCMakeListsPath": null,
-          "cxxModuleHeaderName": null,
-          "isPureCxxDependency": false
-        }
-      }
-    },
     "react-native-vector-icons": {
-      "root": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-vector-icons",
+      "root": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native-vector-icons",
       "name": "react-native-vector-icons",
       "platforms": {
-        "ios": {
-          "podspecPath": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-vector-icons\\RNVectorIcons.podspec",
-          "version": "10.1.0",
-          "configurations": [],
-          "scriptPhases": []
-        },
+        "ios": null,
         "android": {
-          "sourceDir": "E:\\SIH24\\SIHAPP\\node_modules\\react-native-vector-icons\\android",
+          "sourceDir": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native-vector-icons\\android",
           "packageImportPath": "import com.oblador.vectoricons.VectorIconsPackage;",
           "packageInstance": "new VectorIconsPackage()",
           "buildTypes": [],
           "libraryName": "RNVectorIconsSpec",
           "componentDescriptors": [],
-          "cmakeListsPath": "E:/SIH24/SIHAPP/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Users/admin/sih/SIH24/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "expo": {
+      "root": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\expo",
+      "name": "expo",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\expo\\Expo.podspec",
+          "version": "51.0.31",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\expo\\android",
+          "packageImportPath": "import expo.modules.ExpoModulesPackage;",
+          "packageInstance": "new ExpoModulesPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Users/admin/sih/SIH24/node_modules/expo/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-video": {
+      "root": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native-video",
+      "name": "react-native-video",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native-video\\react-native-video.podspec",
+          "version": "6.4.5",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native-video\\android",
+          "packageImportPath": "import com.brentvatne.react.ReactVideoPackage;",
+          "packageInstance": "new ReactVideoPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Users/admin/sih/SIH24/node_modules/react-native-video/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -281,7 +233,7 @@
         {
           "name": "--path <path>",
           "description": "Path to the React Native project root.",
-          "default": "E:\\SIH24\\SIHAPP"
+          "default": "C:\\Users\\admin\\sih\\SIH24"
         },
         {
           "name": "--platform <string>",
@@ -564,19 +516,19 @@
   "assets": [],
   "project": {
     "ios": {
-      "sourceDir": "E:\\SIH24\\SIHAPP\\ios",
+      "sourceDir": "C:\\Users\\admin\\sih\\SIH24\\ios",
       "xcodeProject": {
-        "name": "SIHAPP.xcodeproj",
+        "name": "SIHReactNat.xcodeproj",
         "path": ".",
         "isWorkspace": false
       },
       "assets": []
     },
     "android": {
-      "sourceDir": "E:\\SIH24\\SIHAPP\\android",
+      "sourceDir": "C:\\Users\\admin\\sih\\SIH24\\android",
       "appName": "app",
-      "packageName": "com.sihapp",
-      "applicationId": "com.sihapp",
+      "packageName": "com.signlang",
+      "applicationId": "com.signlang",
       "mainActivity": ".MainActivity",
       "assets": []
     }
