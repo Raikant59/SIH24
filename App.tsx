@@ -11,6 +11,8 @@ import Test from './navigation/Test';
 import AlphabetScreen from './navigation/AlphabetScreen';
 import AlphabetDetailScreen from './navigation/AlphabetDetailScreen';
 import Home from './navigation/Home';
+import LoginScreen from './screens/LoginScreen';
+import SignUpScreen from './screens/SignUpScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -19,7 +21,7 @@ const Stack = createStackNavigator();
 
 const HomeStack = () => (
   <Stack.Navigator>
-    <Stack.Screen name="Home" component={Home} />
+    <Stack.Screen name="Hello, Learner" component={Home} />
     <Stack.Screen name="AlphabetScreen" component={AlphabetScreen} />
     <Stack.Screen name="AlphabetDetailScreen" component={AlphabetDetailScreen} />
     <Stack.Screen name="Test" component={Test} />
@@ -31,7 +33,7 @@ const App=()=>{
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen 
-              name="HomeStack" 
+              name="Home" 
               component={HomeStack}
               options={{
                 tabBarIcon: ({ color, size }) => (
@@ -64,6 +66,24 @@ const App=()=>{
           <Tab.Screen 
             name="Settings" 
             component={AppSet}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Feather name="settings" size={size} color={color}/>
+              )
+            }}
+          />
+          <Tab.Screen 
+            name="SignupScreen" 
+            component={SignUpScreen}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Feather name="settings" size={size} color={color}/>
+              )
+            }}
+          />
+          <Tab.Screen 
+            name="Login" 
+            component={LoginScreen}
             options={{
               tabBarIcon: ({ color, size }) => (
                 <Feather name="settings" size={size} color={color}/>

@@ -4,6 +4,7 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
+        backgroundColor: 'yellow',
     },
     searchBar: {
         height: 40,

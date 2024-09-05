@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Image, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import images from '../assets/imageMappings'; // Import your image mappings
 import questions from '../assets/questions'; // Import the questions
 
@@ -34,10 +34,15 @@ const TestScreen = () => {
                 placeholder="Enter your answer"
                 value={inputValue}
                 onChangeText={setInputValue}
+                autoCapitalize="words"
             />
-            <Button title="Submit" onPress={handleSubmit} />
-            {feedback ? <Text style={styles.feedback}>{feedback}</Text> : null}
-            <Button title="Next" onPress={handleNext} />
+            <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                <Text style={styles.buttonText}>Submit</Text>
+            </TouchableOpacity>
+            {feedback ? <Text style={[styles.feedback, feedback === 'Correct!' ? styles.correct : styles.incorrect]}>{feedback}</Text> : null}
+            <TouchableOpacity style={styles.button} onPress={handleNext}>
+                <Text style={styles.buttonText}>Next</Text>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -47,29 +52,62 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: '#f5f5f5',  // Light background for better contrast
         padding: 20,
     },
     image: {
-        width: 200,
-        height: 200,
+        width: 250,
+        height: 250,
         resizeMode: 'contain',
         marginBottom: 20,
+        borderRadius: 10,
+        shadowColor: '#000', // Shadow for 3D effect
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
     },
     question: {
-        fontSize: 18,
+        fontSize: 22,
         marginBottom: 20,
+        fontWeight: 'bold',
+        color: '#333',  // Dark color for better readability
     },
     input: {
         width: '100%',
-        borderColor: '#ccc',
+        borderColor: '#007bff',  // Blue border
         borderWidth: 1,
-        padding: 10,
+        padding: 15,
         marginBottom: 20,
+        borderRadius: 8,
+        backgroundColor: '#fff',  // White background
+        shadowColor: '#000',  // Shadow for 3D effect
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+    },
+    button: {
+        backgroundColor: '#007bff',  // Blue background
+        padding: 15,
+        borderRadius: 8,
+        marginVertical: 10,
+        width: '100%',
+        alignItems: 'center',
+    },
+    buttonText: {
+        color: '#fff',  // White text
+        fontSize: 16,
+        fontWeight: 'bold',
     },
     feedback: {
-        fontSize: 16,
+        fontSize: 18,
         marginTop: 20,
+        fontWeight: 'bold',
+    },
+    correct: {
         color: 'green',
+    },
+    incorrect: {
+        color: 'red',
     },
 });
 
