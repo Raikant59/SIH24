@@ -18,6 +18,8 @@ import WordsSentenceScreen from './navigation/WordsSentenceScreen';
 import WordsDetailScreen from './navigation/WordsDetailScreen';
 import MathScreen from './navigation/MathScreen';
 import ScienceScreen from './navigation/ScienceScreen';
+import ScienceDetailScreen from './navigation/ScienceDetailScreen';
+import MathDetailScreen from './navigation/MathDetailScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -33,7 +35,9 @@ const HomeStack = () => (
     <Stack.Screen name="WordsSentenceScreen" component={WordsSentenceScreen} />
     <Stack.Screen name="WordsDetailScreen" component={WordsDetailScreen} />
     <Stack.Screen name="MathScreen" component={MathScreen} />
+    <Stack.Screen name="MathDetailScreen" component={MathDetailScreen} />
     <Stack.Screen name="ScienceScreen" component={ScienceScreen} />
+    <Stack.Screen name="ScienceDetailScreen" component={ScienceDetailScreen} />
   </Stack.Navigator>
 );
 
