@@ -13,6 +13,11 @@ import AlphabetDetailScreen from './navigation/AlphabetDetailScreen';
 import Home from './navigation/Home';
 import LoginScreen from './screens/LoginScreen';
 import SignUpScreen from './screens/SignUpScreen';
+import TestScreen from './navigation/Test';
+import WordsSentenceScreen from './navigation/WordsSentenceScreen';
+import WordsDetailScreen from './navigation/WordsDetailScreen';
+import MathScreen from './navigation/MathScreen';
+import ScienceScreen from './navigation/ScienceScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -21,10 +26,14 @@ const Stack = createStackNavigator();
 
 const HomeStack = () => (
   <Stack.Navigator>
-    <Stack.Screen name="Hello, Learner" component={Home} />
+    <Stack.Screen name="Hello, Learner" component={Home} options={{ headerShown: false }} />
     <Stack.Screen name="AlphabetScreen" component={AlphabetScreen} />
     <Stack.Screen name="AlphabetDetailScreen" component={AlphabetDetailScreen} />
     <Stack.Screen name="Test" component={Test} />
+    <Stack.Screen name="WordsSentenceScreen" component={WordsSentenceScreen} />
+    <Stack.Screen name="WordsDetailScreen" component={WordsDetailScreen} />
+    <Stack.Screen name="MathScreen" component={MathScreen} />
+    <Stack.Screen name="ScienceScreen" component={ScienceScreen} />
   </Stack.Navigator>
 );
 
@@ -54,7 +63,7 @@ const App=()=>{
         
           <Tab.Screen 
             name="Test" 
-            component={Test}
+            component={TestScreen}
             options={{
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="ab-testing" size={size} color={color}/>
@@ -76,6 +85,7 @@ const App=()=>{
             name="SignupScreen" 
             component={SignUpScreen}
             options={{
+              headerShown: false,
               tabBarIcon: ({ color, size }) => (
                 <Feather name="settings" size={size} color={color}/>
               )
@@ -85,6 +95,7 @@ const App=()=>{
             name="Login" 
             component={LoginScreen}
             options={{
+              headerShown: false,
               tabBarIcon: ({ color, size }) => (
                 <Feather name="settings" size={size} color={color}/>
               )

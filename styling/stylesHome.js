@@ -4,7 +4,7 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-        backgroundColor: 'yellow',
+        backgroundColor: 'white',
     },
     searchBar: {
         height: 40,
@@ -27,8 +27,8 @@ const styles = {
         justifyContent: 'space-around',
     },
     buttonContainer: {
-        width: 150, // square dimension
-        height: 200, // square dimension
+        width: 150, 
+        height: 200, 
         marginVertical: 10,
     },
     imageBackground: {
@@ -40,14 +40,23 @@ const styles = {
         borderRadius: 5,
     },
     buttonText: {
-        color: 'white',
-        fontSize: 16,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: To make the text stand out
-        paddingHorizontal: 5,
-        paddingVertical: 2,
-        borderRadius: 3,
+    marginTop: 5,  
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: '#6C63FF', 
+    paddingVertical: 10,  
+    borderRadius: 5,  
+    overflow: 'hidden',
+    },
+    heading: {
+    fontSize: 30,        // Large font size for heading
+    fontWeight: 'bold',  // Bold text
+    color: '#333',       // Dark gray color
+    textAlign: 'center', // Center the text
+    marginTop: 20,       // Add some margin at the top
+    marginBottom: 10,    // Add some margin at the bottom
     },
 };
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
 import {
   View,
+  Image,
   Text,
   StatusBar,
   KeyboardAvoidingView,
@@ -69,7 +70,16 @@ const SignUpScreen = () => {
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
-      <StatusBar backgroundColor="blue" barStyle="light-content" />
+      <StatusBar barStyle="light-content" />
+      <Image 
+          source={require('../assets/undraw_Sign_up_n6im-removebg-preview.png')} 
+          style={{
+            width: '100%',  
+            height: 200,    
+            resizeMode: 'contain',  
+            marginTop: 20,  
+          }}
+        />
       <Text style={styles.header}>Create an account</Text>
       <View style={styles.separator} />
       <TextInput
@@ -105,12 +115,15 @@ const SignUpScreen = () => {
       >
         Sign Up
       </Button>
-      <Text
-        style={styles.link}
-        onPress={() => navigation.navigate("LoginScreen")}  // Corrected route name
-      >
-        Already have an account? Log in
-      </Text>
+      <View style={{ alignItems: 'center' }}>
+        <Text
+        style={{fontSize: 18, marginLeft: 18, marginTop: 20, color: 'black'}}
+          onPress={() => navigation.navigate("LoginScreen")}  // Corrected route name
+        >
+          Already have an account? 
+          <Text style={styles.link}> Log in</Text>
+        </Text>
+      </View>
     </KeyboardAvoidingView>
   );
 };
@@ -127,7 +140,7 @@ const styles = StyleSheet.create({
     color: "#3b3b3b",
   },
   separator: {
-    borderBottomColor: "blue",
+    borderBottomColor: "#6C63FF",
     borderBottomWidth: 4,
     borderRadius: 10,
     marginLeft: 20,
@@ -143,6 +156,7 @@ const styles = StyleSheet.create({
     marginLeft: 18,
     marginRight: 18,
     marginTop: 18,
+    backgroundColor: '#6C63FF'
   },
   link: {
     fontSize: 18,

@@ -1,21 +1,46 @@
 {
-  "root": "C:\\Users\\admin\\sih\\SIH24",
-  "reactNativePath": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native",
+  "root": "E:\\Smart India Hackathon\\SIH24",
+  "reactNativePath": "E:\\Smart India Hackathon\\SIH24\\node_modules\\react-native",
   "reactNativeVersion": "0.75",
   "dependencies": {
     "react-native-vector-icons": {
-      "root": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native-vector-icons",
+      "root": "E:\\Smart India Hackathon\\SIH24\\node_modules\\react-native-vector-icons",
       "name": "react-native-vector-icons",
       "platforms": {
         "ios": null,
         "android": {
-          "sourceDir": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native-vector-icons\\android",
+          "sourceDir": "E:\\Smart India Hackathon\\SIH24\\node_modules\\react-native-vector-icons\\android",
           "packageImportPath": "import com.oblador.vectoricons.VectorIconsPackage;",
           "packageInstance": "new VectorIconsPackage()",
           "buildTypes": [],
           "libraryName": "RNVectorIconsSpec",
           "componentDescriptors": [],
-          "cmakeListsPath": "C:/Users/admin/sih/SIH24/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "E:/Smart India Hackathon/SIH24/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "@react-native-async-storage/async-storage": {
+      "root": "E:\\Smart India Hackathon\\SIH24\\node_modules\\@react-native-async-storage\\async-storage",
+      "name": "@react-native-async-storage/async-storage",
+      "platforms": {
+        "ios": {
+          "podspecPath": "E:\\Smart India Hackathon\\SIH24\\node_modules\\@react-native-async-storage\\async-storage\\RNCAsyncStorage.podspec",
+          "version": "2.0.0",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "E:\\Smart India Hackathon\\SIH24\\node_modules\\@react-native-async-storage\\async-storage\\android",
+          "packageImportPath": "import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;",
+          "packageInstance": "new AsyncStoragePackage()",
+          "buildTypes": [],
+          "libraryName": "rnasyncstorage",
+          "componentDescriptors": [],
+          "cmakeListsPath": "E:/Smart India Hackathon/SIH24/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -24,22 +49,22 @@
       }
     },
     "expo": {
-      "root": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\expo",
+      "root": "E:\\Smart India Hackathon\\SIH24\\node_modules\\expo",
       "name": "expo",
       "platforms": {
         "ios": {
-          "podspecPath": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\expo\\Expo.podspec",
+          "podspecPath": "E:\\Smart India Hackathon\\SIH24\\node_modules\\expo\\Expo.podspec",
           "version": "51.0.31",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\expo\\android",
+          "sourceDir": "E:\\Smart India Hackathon\\SIH24\\node_modules\\expo\\android",
           "packageImportPath": "import expo.modules.ExpoModulesPackage;",
           "packageInstance": "new ExpoModulesPackage()",
           "buildTypes": [],
           "componentDescriptors": [],
-          "cmakeListsPath": "C:/Users/admin/sih/SIH24/node_modules/expo/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "E:/Smart India Hackathon/SIH24/node_modules/expo/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -48,22 +73,22 @@
       }
     },
     "react-native-video": {
-      "root": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native-video",
+      "root": "E:\\Smart India Hackathon\\SIH24\\node_modules\\react-native-video",
       "name": "react-native-video",
       "platforms": {
         "ios": {
-          "podspecPath": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native-video\\react-native-video.podspec",
+          "podspecPath": "E:\\Smart India Hackathon\\SIH24\\node_modules\\react-native-video\\react-native-video.podspec",
           "version": "6.4.5",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "C:\\Users\\admin\\sih\\SIH24\\node_modules\\react-native-video\\android",
+          "sourceDir": "E:\\Smart India Hackathon\\SIH24\\node_modules\\react-native-video\\android",
           "packageImportPath": "import com.brentvatne.react.ReactVideoPackage;",
           "packageInstance": "new ReactVideoPackage()",
           "buildTypes": [],
           "componentDescriptors": [],
-          "cmakeListsPath": "C:/Users/admin/sih/SIH24/node_modules/react-native-video/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "E:/Smart India Hackathon/SIH24/node_modules/react-native-video/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -233,7 +258,7 @@
         {
           "name": "--path <path>",
           "description": "Path to the React Native project root.",
-          "default": "C:\\Users\\admin\\sih\\SIH24"
+          "default": "E:\\Smart India Hackathon\\SIH24"
         },
         {
           "name": "--platform <string>",
@@ -516,7 +541,7 @@
   "assets": [],
   "project": {
     "ios": {
-      "sourceDir": "C:\\Users\\admin\\sih\\SIH24\\ios",
+      "sourceDir": "E:\\Smart India Hackathon\\SIH24\\ios",
       "xcodeProject": {
         "name": "SIHReactNat.xcodeproj",
         "path": ".",
@@ -525,7 +550,7 @@
       "assets": []
     },
     "android": {
-      "sourceDir": "C:\\Users\\admin\\sih\\SIH24\\android",
+      "sourceDir": "E:\\Smart India Hackathon\\SIH24\\android",
       "appName": "app",
       "packageName": "com.signlang",
       "applicationId": "com.signlang",

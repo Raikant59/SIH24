@@ -17,8 +17,21 @@ const Home = ({ navigation }) => {
         navigation.navigate('AlphabetScreen', { category: field });
     };
 
+    const wordsPressed = (field) => {
+        navigation.navigate('WordsSentenceScreen', { category: field });
+    };
+
+    const mathPressed = (field) => {
+        navigation.navigate('MathScreen', { category: field });
+    };
+
+    const sciencePressed = (field) => {
+        navigation.navigate('ScienceScreen', { category: field });
+    };
+
     return (
         <ScrollView contentContainerStyle={styles.container}>
+            <Text style={styles.heading}>Hello, Learner</Text>
             <TextInput
                 style={styles.searchBar}
                 placeholder="Search..."
@@ -34,55 +47,52 @@ const Home = ({ navigation }) => {
                     onPress={() => alphabetPressed('Alphabets and Numbers')}
                 >
                     <ImageBackground 
-                        source={require('../assets/alphabet.jpg')} 
+                        source={require('../assets/alphabet.png')} 
                         style={styles.imageBackground} 
                         imageStyle={styles.imageStyle}
-                    >
-                        <Text style={styles.buttonText}>Alphabets and Numbers</Text>
-                    </ImageBackground>
+                    />
+                <Text style={styles.buttonText}>Alphabets & Nums</Text>
                 </TouchableOpacity>
                 
                 <TouchableOpacity 
                     style={styles.buttonContainer} 
-                    onPress={() => handleButtonPress('Words & Sentence')}
+                    onPress={() => wordsPressed('Words & Sentence')}
                 >
                     <ImageBackground 
-                        source={require('../assets/words.jpg')} 
+                        source={require('../assets/words.png')} 
                         style={styles.imageBackground} 
                         imageStyle={styles.imageStyle}
-                    >
+                    />
                         <Text style={styles.buttonText }>Words & Sentence</Text>
-                    </ImageBackground>
                 </TouchableOpacity>
                 
                 <TouchableOpacity 
                     style={styles.buttonContainer} 
-                    onPress={() => handleButtonPress('Mathematics')}
+                    onPress={() => mathPressed('Mathematics')}
                 >
                     <ImageBackground 
-                        source={require('../assets/math.jpg')} 
+                        source={require('../assets/math.png')} 
                         style={styles.imageBackground} 
                         imageStyle={styles.imageStyle}
-                    >
+                    />
                         <Text style={styles.buttonText}>Mathematics</Text>
-                    </ImageBackground>
                 </TouchableOpacity>
                 
                 <TouchableOpacity 
                     style={styles.buttonContainer} 
-                    onPress={() => handleButtonPress('Science')}
+                    onPress={() => sciencePressed('Science')}
                 >
                     <ImageBackground 
-                        source={require('../assets/science.jpg')} 
+                        source={require('../assets/science.png')} 
                         style={styles.imageBackground} 
                         imageStyle={styles.imageStyle}
-                    >
+                    />
                         <Text style={styles.buttonText}>Science</Text>
-                    </ImageBackground>
                 </TouchableOpacity>
             </View>
         </ScrollView>
     );
+    
 };
 
 export default Home;

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
-import {
-  View,
-  Text,
-  StatusBar,
-  KeyboardAvoidingView,
-  Alert
-} from 'react-native';
+import { View, Image, Text, StatusBar, KeyboardAvoidingView, Alert, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
@@ -47,58 +41,103 @@ const LoginScreen = () => {
   };
 
   return (
-    <>
-      <KeyboardAvoidingView behavior="position">
-        <StatusBar backgroundColor="blue" barStyle="light-content" />
-        <Text style={{ fontSize: 35, marginLeft: 18, marginTop: 10, color: "#3b3b3b" }}>Welcome to</Text>
-        <Text style={{ fontSize: 30, marginLeft: 18, color: "blue" }}>Indian Sign Language</Text>
-        <View
-          style={{
-            borderBottomColor: "blue",
-            borderBottomWidth: 4,
-            borderRadius: 10,
-            marginLeft: 20,
-            marginRight: 150,
-            marginTop: 4
-          }}
+    <View style={styles.container}>
+      <KeyboardAvoidingView behavior="position" style={styles.keyboardAvoidingView}>
+        <StatusBar barStyle="light-content" />
+        <Image 
+          source={require('../assets/undraw_Login_re_4vu2-removebg-preview.png')} 
+          style={styles.image}
         />
-        <Text style={{ fontSize: 20, marginLeft: 18, marginTop: 20 }}>Login with email</Text>
+        <Text style={styles.header}>Welcome! Learner</Text>
+        <View style={styles.separator} />
+        <Text style={styles.title}>LOGIN</Text>
         <TextInput
           label='Email'
           mode="outlined"
           value={email}
-          style={{ marginLeft: 18, marginRight: 18, marginTop: 18 }}
+          style={styles.input}
           theme={{ colors: { primary: "blue" } }}
-          onChangeText={(text) => setEmail(text)}
+          onChangeText={setEmail}
         />
         <TextInput
           label='Password'
           mode="outlined"
-          secureTextEntry={true}
+          secureTextEntry
           value={password}
-          onChangeText={(text) => setPassword(text)}
-          style={{ marginLeft: 18, marginRight: 18, marginTop: 18 }}
+          onChangeText={setPassword}
+          style={styles.input}
           theme={{ colors: { primary: "blue" } }}
         />
         <Button
           mode="contained"
-          style={{ marginLeft: 18, marginRight: 18, marginTop: 18 }}
+          style={styles.button}
           onPress={sendCred} 
         >
           Login
         </Button>
         <Button
-            mode="text"
-            style={{ marginLeft: 18, marginRight: 18, marginTop: 18 }}
-            onPress={() => navigation.navigate("SignUp")}
+          mode="text"
+          style={styles.signUpButton}
+          labelStyle={{ color: '#6C63FF' }} 
+          onPress={() => navigation.navigate("SignUp")}
         >
-
-            Don't have an account? Sign Up
+          Don't have an account? Sign Up
         </Button>
-
       </KeyboardAvoidingView>
-    </>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+  },
+  keyboardAvoidingView: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  image: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'contain',
+    marginTop: 20,
+  },
+  header: {
+    fontSize: 35,
+    marginLeft: 18,
+    marginTop: 10,
+    color: "#3b3b3b",
+  },
+  separator: {
+    borderBottomColor: "#6C63FF",
+    borderBottomWidth: 4,
+    borderRadius: 10,
+    marginLeft: 20,
+    marginRight: 150,
+    marginTop: 4,
+  },
+  title: {
+    fontSize: 20,
+    marginLeft: 18,
+    marginTop: 20,
+  },
+  input: {
+    marginLeft: 18,
+    marginRight: 18,
+    marginTop: 18,
+  },
+  button: {
+    marginLeft: 18,
+    marginRight: 18,
+    marginTop: 18,
+    backgroundColor: '#6C63FF',
+  },
+  signUpButton: {
+    marginLeft: 18,
+    marginRight: 18,
+    marginTop: 18,
+  },
+});
 
 export default LoginScreen;

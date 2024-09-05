@@ -1,7 +1,7 @@
 // videoMappings.js
 const videos = {
-    'A': require('./alphabet/Av.mp4'), 
-    'default': require('./alphabet/default.mp4') // Optional: default video
+    // 'A': require('./alphabet/Av.mp4'), 
+    'default': require('./default.mp4') 
 };
 
 export default videos;

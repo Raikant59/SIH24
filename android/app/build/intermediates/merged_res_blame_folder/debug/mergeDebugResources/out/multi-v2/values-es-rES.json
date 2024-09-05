@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.sihapp-mergeDebugResources-31:/values-es-rES/values-es-rES.xml",
+            "outputFile": "com.signlang.app-mergeDebugResources-40:/values-es-rES/values-es-rES.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Sumit Kumar\\.gradle\\caches\\8.8\\transforms\\b05a070e407358a86ce459a71fac5137\\transformed\\react-android-0.75.2-debug\\res\\values-es-rES\\values-es-rES.xml",

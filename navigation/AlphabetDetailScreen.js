@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { View, Image, StyleSheet, Button, Modal, TouchableOpacity, Text } from 'react-native';
-import { Video } from 'expo-av'; // Import from expo-av
-import images from '../assets/imageMappings'; // Import your image mappings
-import videos from '../assets/videoMappings'; // Import video mappings
+import { View, Image, StyleSheet, Modal, TouchableOpacity, Text } from 'react-native';
+import { Video } from 'expo-av'; 
+import images from '../assets/imageMappings'; 
+import videos from '../assets/videoMappings'; 
 
 const AlphabetDetailScreen = ({ route }) => {
     const { item } = route.params;
     const [showVideo, setShowVideo] = useState(false);
 
-    // Use the imported images to get the image source
     const imageSource = images[item] || images['default'];
     const videoSource = videos[item] || videos['default'];
 
@@ -22,6 +21,7 @@ const AlphabetDetailScreen = ({ route }) => {
 
     return (
         <View style={styles.container}>
+            <Text style={{position: 'absolute', top: 30, fontSize: 30 }}>{item}</Text>
             <Image source={imageSource} style={styles.fullscreenImage} />
             {!showVideo && (
                 <TouchableOpacity style={styles.button} onPress={handleShowVideo}>
@@ -35,6 +35,7 @@ const AlphabetDetailScreen = ({ route }) => {
                     onRequestClose={handleClose}
                 >
                     <View style={styles.modalContainer}>
+                        <Text style={styles.wordText}>{item}</Text> 
                         <Video
                             source={videoSource}
                             style={styles.fullscreenVideo}
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     button: {
-        backgroundColor: '#007BFF',
+        backgroundColor: '#6C63FF',
         padding: 10,
         borderRadius: 5,
         margin: 10,
@@ -85,10 +86,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
     },
+    wordText: {
+        fontSize: 24,
+        color: '#ffffff',
+        marginBottom: 20,
+        textAlign: 'center',
+    },
     closeButton: {
         position: 'absolute',
         bottom: 30,
-        backgroundColor: '#FF5733',
+        backgroundColor: '#000000',
         padding: 10,
         borderRadius: 5,
     },

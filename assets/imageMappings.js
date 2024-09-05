@@ -26,10 +26,11 @@ const images = {
     'X': require('./alphabet/X.jpg'),
     'Y': require('./alphabet/Y.jpg'),
     // 'Z': require('./alphabet/Z.jpg'),
-
     
     '1': require('./numbers/1.jpg'),
     '2': require('./numbers/2.jpg'),
+
+    'Apple': require('./words/Apple.jpg'),
     
     
     'default': require('./default.jpg')

@@ -4,7 +4,7 @@
     "type": "MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.sihapp",
+  "applicationId": "com.signlang",
   "variantName": "debug",
   "elements": [
     {
