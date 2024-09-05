@@ -1,66 +1,38 @@
 import React, { useState } from 'react';
 import { Button, TextInput } from 'react-native-paper';
-import {
-  View,
-  Image,
-  Text,
-  StatusBar,
-  KeyboardAvoidingView,
-  Alert,
-  StyleSheet,
-} from 'react-native';
+import { View, Image, Text, StatusBar, KeyboardAvoidingView, Alert, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
-const SignUpScreen = () => {
+const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const navigation = useNavigation();
+  const navigation = useNavigation();  // Ensure hooks are called at the top level
 
-  const handleSignUp = async () => {
-    if (!email || !password || !confirmPassword) {
-      Alert.alert("Error", "All fields are required");
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      Alert.alert("Error", "Passwords do not match");
-      return;
-    }
-
+  const sendCred = async () => {
     try {
-      const response = await fetch("http://10.10.198.22:3000/signup", {
+      console.log("chal raha hai");
+
+      const response = await fetch("http://10.10.198.22:3000/signin", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          email,
-          password,
+          "email": email,
+          "password": password
         })
       });
 
-      // Check if response is not JSON, then log and handle error
-      if (response.headers.get("Content-Type")?.includes("application/json")) {
-        const data = await response.json();
-        console.log("data", data);
+      const data = await response.json();
+      console.log("data", data);
 
-        if (response.ok) {
-          try {
-            await AsyncStorage.setItem('token', data.token);
-            navigation.replace("Home");  // Ensure "Home" is the correct route name
-          } catch (e) {
-            console.log("Error storing token", e);
-            Alert.alert("Error", e.message);
-          }
-        } else {
-          Alert.alert("Error", data.message || "Signup failed");
-        }
-      } else {
-        const responseText = await response.text();
-        console.log("Unexpected response type:", responseText);
-        Alert.alert("Error", "Unexpected server response");
+      try {
+        await AsyncStorage.setItem('token', data.token);
+        navigation.navigate("Home");
+      } catch (e) {
+        console.log("Error storing token", e);
+        Alert.alert("Error", e.message);
       }
     } catch (error) {
       console.log("Network request failed", error);
@@ -69,69 +41,67 @@ const SignUpScreen = () => {
   };
 
   return (
-    <KeyboardAvoidingView behavior="padding" style={styles.container}>
-      <StatusBar barStyle="light-content" />
-      <Image 
-          source={require('../assets/undraw_Sign_up_n6im-removebg-preview.png')} 
-          style={{
-            width: '100%',  
-            height: 200,    
-            resizeMode: 'contain',  
-            marginTop: 20,  
-          }}
+    <View style={styles.container}>
+      <KeyboardAvoidingView behavior="position" style={styles.keyboardAvoidingView}>
+        <StatusBar barStyle="light-content" />
+        <Image 
+          source={require('../assets/undraw_Login_re_4vu2-removebg-preview.png')} 
+          style={styles.image}
         />
-      <Text style={styles.header}>Create an account</Text>
-      <View style={styles.separator} />
-      <TextInput
-        label='Email'
-        mode="outlined"
-        value={email}
-        style={styles.input}
-        theme={{ colors: { primary: "blue" } }}
-        onChangeText={setEmail}
-      />
-      <TextInput
-        label='Password'
-        mode="outlined"
-        secureTextEntry
-        value={password}
-        style={styles.input}
-        theme={{ colors: { primary: "blue" } }}
-        onChangeText={setPassword}
-      />
-      <TextInput
-        label='Confirm Password'
-        mode="outlined"
-        secureTextEntry
-        value={confirmPassword}
-        style={styles.input}
-        theme={{ colors: { primary: "blue" } }}
-        onChangeText={setConfirmPassword}
-      />
-      <Button
-        mode="contained"
-        style={styles.button}
-        onPress={handleSignUp}
-      >
-        Sign Up
-      </Button>
-      <View style={{ alignItems: 'center' }}>
-        <Text
-        style={{fontSize: 18, marginLeft: 18, marginTop: 20, color: 'black'}}
-          onPress={() => navigation.navigate("LoginScreen")}  // Corrected route name
+        <Text style={styles.header}>Welcome! Learner</Text>
+        <View style={styles.separator} />
+        <Text style={styles.title}>LOGIN</Text>
+        <TextInput
+          label='Email'
+          mode="outlined"
+          value={email}
+          style={styles.input}
+          theme={{ colors: { primary: "blue" } }}
+          onChangeText={setEmail}
+        />
+        <TextInput
+          label='Password'
+          mode="outlined"
+          secureTextEntry
+          value={password}
+          onChangeText={setPassword}
+          style={styles.input}
+          theme={{ colors: { primary: "blue" } }}
+        />
+        <Button
+          mode="contained"
+          style={styles.button}
+          onPress={sendCred} 
         >
-          Already have an account? 
-          <Text style={styles.link}> Log in</Text>
-        </Text>
-      </View>
-    </KeyboardAvoidingView>
+          Login
+        </Button>
+        <Button
+          mode="text"
+          style={styles.signUpButton}
+          labelStyle={{ color: '#6C63FF' }} 
+          onPress={() => navigation.navigate("SignUp")}
+        >
+          Don't have an account? Sign Up
+        </Button>
+      </KeyboardAvoidingView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+  },
+  keyboardAvoidingView: {
+    flex: 1,
     justifyContent: 'center',
+  },
+  image: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'contain',
+    marginTop: 20,
   },
   header: {
     fontSize: 35,
@@ -145,7 +115,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginLeft: 20,
     marginRight: 150,
-    marginTop: 4
+    marginTop: 4,
+  },
+  title: {
+    fontSize: 20,
+    marginLeft: 18,
+    marginTop: 20,
   },
   input: {
     marginLeft: 18,
@@ -156,14 +131,13 @@ const styles = StyleSheet.create({
     marginLeft: 18,
     marginRight: 18,
     marginTop: 18,
-    backgroundColor: '#6C63FF'
+    backgroundColor: '#6C63FF',
   },
-  link: {
-    fontSize: 18,
+  signUpButton: {
     marginLeft: 18,
-    marginTop: 20,
-    color: 'blue',
-  }
+    marginRight: 18,
+    marginTop: 18,
+  },
 });
 
-export default SignUpScreen;
+export default LoginScreen;
