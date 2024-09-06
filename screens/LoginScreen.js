@@ -11,28 +11,32 @@ const LoginScreen = () => {
 
   const sendCred = async () => {
     try {
-      const response = await fetch("http://10.10.198.22:3000/signin", { // Consider moving URL to config
+      console.log("chal raha hai");
+
+      const response = await fetch("http://10.10.198.22:3000/signin", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({
+          "email": email,
+          "password": password
+        })
       });
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok.');
-      }
-
       const data = await response.json();
+      console.log("data", data);
 
-      if (data.token) {
+      try {
         await AsyncStorage.setItem('token', data.token);
         navigation.navigate("Home");
-      } else {
-        Alert.alert("Error", "Invalid credentials or no token received");
+      } catch (e) {
+        console.log("Error storing token", e);
+        Alert.alert("Error", e.message);
       }
     } catch (error) {
-      Alert.alert("Error", error.message || "An error occurred");
+      console.log("Network request failed", error);
+      Alert.alert("Error", "Network request failed");
     }
   };
 
