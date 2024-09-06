@@ -2,7 +2,41 @@ const questions = [
     { image: 'A', answer: 'A' },
     { image: 'B', answer: 'B' },
     { image: 'C', answer: 'C' },
-
+    { image: 'D', answer: 'D' },
+    { image: 'E', answer: 'E' },
+    { image: 'F', answer: 'F' },
+    { image: 'G', answer: 'G' },
+    { image: 'H', answer: 'H' },
+    { image: 'I', answer: 'I' },
+    // { image: 'J', answer: 'J' },
+    { image: 'K', answer: 'K' },
+    { image: 'L', answer: 'L' },
+    { image: 'M', answer: 'M' },
+    { image: 'N', answer: 'N' },
+    { image: 'O', answer: 'O' },
+    { image: 'P', answer: 'P' },
+    { image: 'Q', answer: 'Q' },
+    { image: 'R', answer: 'R' },
+    { image: 'S', answer: 'S' },
+    { image: 'T', answer: 'T' },
+    { image: 'U', answer: 'U' },
+    { image: 'V', answer: 'V' },
+    { image: 'W', answer: 'W' },
+    { image: 'X', answer: 'X' },
+    { image: 'Y', answer: 'Y' },
+    // { image: 'Z', answer: 'Z' },
+    
+    
+    // { image: '0', answer: '0' },
+    // { image: '1', answer: '1' },
+    // { image: '2', answer: '2' },
+    // { image: '3', answer: '3' },
+    // { image: '4', answer: '4' },
+    // { image: '5', answer: '5' },
+    // { image: '6', answer: '6' },
+    // { image: '7', answer: '7' },
+    // { image: '8', answer: '8' },
+    // { image: '9', answer: '9' }
 ];
 
 export default questions;

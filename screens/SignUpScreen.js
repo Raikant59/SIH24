@@ -19,43 +19,58 @@ const SignUpScreen = () => {
   const navigation = useNavigation();
 
   const handleSignUp = async () => {
-    if (!email || !password || !confirmPassword) {
+    // Trim whitespace from inputs
+    const trimmedEmail = email.trim();
+    const trimmedPassword = password.trim();
+    const trimmedConfirmPassword = confirmPassword.trim();
+  
+    console.log("Trimmed Email:", trimmedEmail);
+    console.log("Trimmed Password:", trimmedPassword);
+    console.log("Trimmed Confirm Password:", trimmedConfirmPassword);
+  
+    // Check if all fields are filled
+    if (!trimmedEmail || !trimmedPassword || !trimmedConfirmPassword) {
       Alert.alert("Error", "All fields are required");
       return;
     }
-
-    if (password !== confirmPassword) {
+  
+    // Check if passwords match
+    if (trimmedPassword !== trimmedConfirmPassword) {
       Alert.alert("Error", "Passwords do not match");
       return;
     }
-
+  
     try {
-      const response = await fetch("http://10.10.198.22:3000/signup", {
+      console.log("Sending request to server...");
+      const response = await fetch("http://10.10.200.201:5000/signup", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          email,
-          password,
+          email: trimmedEmail,
+          password: trimmedPassword,
+          confirmPassword: trimmedConfirmPassword // Include confirmPassword
         })
       });
-
-      // Check if response is not JSON, then log and handle error
+  
+      console.log("Received response from server");
+  
       if (response.headers.get("Content-Type")?.includes("application/json")) {
         const data = await response.json();
-        console.log("data", data);
-
+        console.log("Response data:", data);
+  
         if (response.ok) {
           try {
             await AsyncStorage.setItem('token', data.token);
+            console.log("Token saved:", data.token);
             navigation.replace("Home");  // Ensure "Home" is the correct route name
           } catch (e) {
-            console.log("Error storing token", e);
+            console.log("Error storing token:", e);
             Alert.alert("Error", e.message);
           }
         } else {
-          Alert.alert("Error", data.message || "Signup failed");
+          Alert.alert("Error", data.error || "Signup failed");
         }
       } else {
         const responseText = await response.text();
@@ -63,23 +78,19 @@ const SignUpScreen = () => {
         Alert.alert("Error", "Unexpected server response");
       }
     } catch (error) {
-      console.log("Network request failed", error);
+      console.log("Network request failed:", error);
       Alert.alert("Error", "Network request failed");
     }
   };
+  
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
       <StatusBar barStyle="light-content" />
       <Image 
-          source={require('../assets/undraw_Sign_up_n6im-removebg-preview.png')} 
-          style={{
-            width: '100%',  
-            height: 200,    
-            resizeMode: 'contain',  
-            marginTop: 20,  
-          }}
-        />
+        source={require('../assets/undraw_Sign_up_n6im-removebg-preview.png')} 
+        style={styles.image}
+      />
       <Text style={styles.header}>Create an account</Text>
       <View style={styles.separator} />
       <TextInput
@@ -115,10 +126,10 @@ const SignUpScreen = () => {
       >
         Sign Up
       </Button>
-      <View style={{ alignItems: 'center' }}>
+      <View style={styles.linkContainer}>
         <Text
-        style={{fontSize: 18, marginLeft: 18, marginTop: 20, color: 'black'}}
-          onPress={() => navigation.navigate("LoginScreen")}  // Corrected route name
+          style={styles.linkText}
+          onPress={() => navigation.navigate("LoginScreen")}  // Ensure "LoginScreen" is the correct route name
         >
           Already have an account? 
           <Text style={styles.link}> Log in</Text>
@@ -132,6 +143,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+  },
+  image: {
+    width: '100%',  
+    height: 200,    
+    resizeMode: 'contain',  
+    marginTop: 20,  
   },
   header: {
     fontSize: 35,
@@ -158,10 +175,17 @@ const styles = StyleSheet.create({
     marginTop: 18,
     backgroundColor: '#6C63FF'
   },
-  link: {
+  linkContainer: {
+    alignItems: 'center',
+  },
+  linkText: {
     fontSize: 18,
     marginLeft: 18,
     marginTop: 20,
+    color: 'black',
+  },
+  link: {
+    fontSize: 18,
     color: 'blue',
   }
 });

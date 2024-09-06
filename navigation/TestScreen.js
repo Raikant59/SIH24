@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { View, Image, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-import images from '../assets/imageMappings'; // Import your image mappings
-import questions from '../assets/questions'; // Import the questions
+import images from '../assets/imageMappings'; 
+import questions from '../assets/questions'; 
 
 const TestScreen = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [inputValue, setInputValue] = useState('');
     const [feedback, setFeedback] = useState('');
-    const [score, setScore] = useState(0);  // Track correct answers
+    const [score, setScore] = useState(0);  
 
-    // Get current question
+
     const { image, answer } = questions[currentQuestionIndex];
 
     const handleSubmit = () => {
         if (inputValue.trim().toUpperCase() === answer.toUpperCase()) {
             setFeedback('Correct!');
-            setScore(score + 1);  // Increment score on correct answer
+            setScore(score + 1);  
         } else {
             setFeedback('Incorrect. Try again.');
         }
@@ -58,14 +58,14 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f5f5f5',  // Light background for better contrast
+        backgroundColor: '#f5f5f5',  
         padding: 20,
     },
     scoreText: {
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 20,
-        color: '#007bff',  // Blue text for score
+        color: '#007bff', 
     },
     image: {
         width: 250,
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         marginBottom: 20,
         borderRadius: 10,
-        shadowColor: '#000', // Shadow for 3D effect
+        shadowColor: '#000', 
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
@@ -82,23 +82,23 @@ const styles = StyleSheet.create({
         fontSize: 22,
         marginBottom: 20,
         fontWeight: 'bold',
-        color: '#333',  // Dark color for better readability
+        color: '#333',  
     },
     input: {
         width: '100%',
-        borderColor: '#007bff',  // Blue border
+        borderColor: '#007bff',  
         borderWidth: 1,
         padding: 15,
         marginBottom: 20,
         borderRadius: 8,
-        backgroundColor: '#fff',  // White background
-        shadowColor: '#000',  // Shadow for 3D effect
+        backgroundColor: '#fff',  
+        shadowColor: '#000',  
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
     },
     button: {
-        backgroundColor: '#007bff',  // Blue background
+        backgroundColor: '#007bff',  
         padding: 15,
         borderRadius: 8,
         marginVertical: 10,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     buttonText: {
-        color: '#fff',  // White text
+        color: '#fff',  
         fontSize: 16,
         fontWeight: 'bold',
     },

@@ -1,42 +1,54 @@
-import React, { useState } from 'react';
-import { Button, TextInput } from 'react-native-paper';
+import React, { useState, useEffect } from 'react';
+import { Button, TextInput, ActivityIndicator } from 'react-native-paper';
 import { View, Image, Text, StatusBar, KeyboardAvoidingView, Alert, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
-const LoginScreen = () => {
+const LoginScreen = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigation = useNavigation();  // Ensure hooks are called at the top level
+  const [loading, setLoading] = useState(false); 
+  const navigation = useNavigation();
+
+
+  useEffect(() => {
+    console.log(navigation); 
+  }, [navigation]);
 
   const sendCred = async () => {
-    try {
-      console.log("chal raha hai");
+    if (!email || !password) {
+      Alert.alert("Error", "Please enter both email and password");
+      return;
+    }
 
-      const response = await fetch("http://10.10.198.22:3000/signin", {
+    setLoading(true); 
+
+    try {
+      const response = await fetch("http://10.10.200.201:3000/signin", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          "email": email,
-          "password": password
+          "email": email.toLowerCase(),
+          "password": password.toLowerCase()
         })
       });
 
       const data = await response.json();
       console.log("data", data);
 
-      try {
+      if (response.ok) {
         await AsyncStorage.setItem('token', data.token);
-        navigation.navigate("Home");
-      } catch (e) {
-        console.log("Error storing token", e);
-        Alert.alert("Error", e.message);
+        setIsLoggedIn(true);
+      } else {
+        Alert.alert("Login Failed", data.error || "Invalid credentials");
       }
     } catch (error) {
       console.log("Network request failed", error);
       Alert.alert("Error", "Network request failed");
+    } finally {
+      setLoading(false); // Stop loader
     }
   };
 
@@ -68,18 +80,28 @@ const LoginScreen = () => {
           style={styles.input}
           theme={{ colors: { primary: "blue" } }}
         />
-        <Button
-          mode="contained"
-          style={styles.button}
-          onPress={sendCred} 
-        >
-          Login
-        </Button>
+        {loading ? (
+          <ActivityIndicator size="large" color="#6C63FF" style={styles.loader} />
+        ) : (
+          <Button
+            mode="contained"
+            style={styles.button}
+            onPress={sendCred} 
+          >
+            Login
+          </Button>
+        )}
         <Button
           mode="text"
           style={styles.signUpButton}
           labelStyle={{ color: '#6C63FF' }} 
-          onPress={() => navigation.navigate("SignUp")}
+          onPress={() => {
+            if (navigation) {
+              navigation.navigate("SignUpScreen");
+            } else {
+              Alert.alert("Error", "Navigation not initialized");
+            }
+          }}
         >
           Don't have an account? Sign Up
         </Button>
@@ -136,6 +158,9 @@ const styles = StyleSheet.create({
   signUpButton: {
     marginLeft: 18,
     marginRight: 18,
+    marginTop: 18,
+  },
+  loader: {
     marginTop: 18,
   },
 });
